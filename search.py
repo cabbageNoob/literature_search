@@ -11,8 +11,27 @@ def filter_msg(msg):
     body = {
         "size": 10,
         "query": {
-            "match": {
-                "title":msg
+            "bool": {
+                "should": [
+                    {
+                        "match": {
+                            "title":msg
+                        }
+                    },
+                    # {
+                    #     "match": {
+                    #         "abstract":msg
+                    #     }
+                    # }
+                ]
+            }
+        },
+        "highlight": {
+            "pre_tags": "<b style='color:red;font-size:20px;>",
+            "post_tags": "</b>",
+            "fields": {
+                "title": {},
+                # "abstract": {}
             }
         }
     }

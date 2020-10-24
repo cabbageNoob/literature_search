@@ -98,7 +98,7 @@
                             <div class="feature">
                                 <div class="content">
                                     <a color="rgb(100,100,100)" target="_blank" href="{{ result['_source']['url'] }}"
-                                       font-size="large">{{ result['_source'].title|safe }}</a>
+                                       font-size="large">{{ result.highlight.title|safe }}</a>
                                     <div class="newsinfo ">
                                         <div class="left-source ">
                                             <p style="margin-bottom: 1em; font-family: auto"> {{ result["_source"]['author'] }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ result['_source'].keywords }}</p>
